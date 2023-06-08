@@ -246,3 +246,9 @@
 * Tor browser can be downloaded from [the Tor website](https://www.torproject.org/)
 * If that website is censored, there's a [Github repo with releases](https://github.com/torproject/torbrowser-releases/releases)
 * For other tasks such as ssh, [Torsocks](https://support.torproject.org/glossary/torsocks/) can route all the network traffic of a program through Tor
+
+---
+
+# Using Tor
+
+* Exit nodes are often blacklisted
