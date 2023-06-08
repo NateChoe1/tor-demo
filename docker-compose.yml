@@ -1,0 +1,25 @@
+version: "3"
+services:
+  nginx:
+    container_name: tor-nginx
+    image: nginx
+    ports:
+      - 80:80
+    volumes:
+      - ./site:/usr/share/nginx/html:ro
+    networks:
+      - tor-network
+  tor-router:
+    container_name: tor-router
+    image: natechoe/tor-relay
+    environment:
+      - RELAY_EXPERT=1
+    volumes:
+      - ./torrc:/etc/tor/torrc
+      - ./tor-data:/var/lib/tor/tor-data
+    networks:
+      - tor-network
+
+networks:
+  tor-network:
+    name: tor_network

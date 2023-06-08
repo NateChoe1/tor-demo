@@ -1,0 +1,2 @@
+HiddenServiceDir /var/lib/tor/tor-data/hands-on-onion
+HiddenServicePort 80 nginx:80
