@@ -51,7 +51,7 @@
         
         Knows:             Knows:             Knows:             Knows:             Knows:
           client id          client id          client id          server id          server id
-          server id          vpn id             server id          vpn id             vpn id
+          server id          VPN id             server id          VPN id             VPN id
           content                                                                     content
 
 * Random attackers on the wire are thwarted
@@ -71,7 +71,7 @@
         
         Knows:             Knows:             Knows:             Knows:
           client id          client id          server id          server id
-          server id          next vpn id        prev vpn id        final vpn id
+          server id          next VPN id        prev VPN id        final VPN id
           content                                                  content
 
 * No party knows both the client and the server
@@ -240,6 +240,22 @@
 
 ---
 
+# Tor curcuit
+
+        +----------+       +----------+       +----------+       +----------+       +----------+
+        |          |  TLS  |          |  TLS  |          |  TLS  |          |  TLS  |          |
+        |  source  | <---> | Relay 1  | <---> | Relay 2  | <---> | Relay 3  | <---> |   dest   |
+        |          |       |          |       |          |       |          |       |          |
+        +----------+       +----------+       +----------+       +----------+       +----------+
+        
+        Knows:             Knows:             Knows:             Knows:             Knows:
+          client id          client id          prev relay id      server id          dest id
+          server id          next relay id      next relay id      prev relay id      final relay id
+          all relay ids                                                               content
+          content
+
+---
+
 # Using Tor
 
 * Tor is mainly used through the Tor browser
@@ -249,6 +265,11 @@
 
 ---
 
-# Using Tor
+# Helping Tor
 
-* Exit nodes are often blacklisted
+* [Run Snowflake](https://snowflake.torproject.org)
+* [Host a relay](https://github.com/NateChoe1/tor-relay-docker)
+
+---
+
+# Thank you!
